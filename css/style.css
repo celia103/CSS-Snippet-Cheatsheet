@@ -1,0 +1,170 @@
+/* Universal CSS */
+
+:root {
+  --turquoise: #66fcf1;
+  --dark-grey: #333940;
+  --light-turquoise: #ebfafa;
+  --marigold-yellow: #fbe870;
+}
+
+::selection {
+  background-color: var(--marigold-yellow);
+  color: var(--dark-grey);
+}
+
+body {
+  background-color: var(--dark-grey);
+  line-height: 1.3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: var(--light-turquoise);
+  margin: 0 2rem;
+}
+
+main {
+  width: 100%;
+}
+
+/* End of Universal CSS */
+
+/* Header CSS */
+header {
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--turquoise);
+  line-height: normal;
+}
+/* End of Header */
+
+/* Main CSS */
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.card-column {
+  display: flex;
+  flex: 1 0 100%;
+}
+
+.code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 2px dashed var(--light-turquoise);
+  width: 100%;
+  margin: 1rem 0 2rem 1rem;
+  padding: 15px;
+  color: var(--light-turquoise);
+}
+
+.code-header {
+  position: relative;
+  padding: 0.5rem;
+  margin: -2rem 0 0 0;
+  width: auto;
+  background-color: var(--dark-grey);
+  border: 2px solid var(--light-turquoise);
+  font-size: 1.5rem;
+  color: var(--turquoise);
+}
+
+.code-block {
+  display: flex;
+  align-items: center;
+  white-space: pre-wrap;
+  overflow: auto;
+  tab-size: 2;
+  margin: 0;
+
+  border-radius: 5px;
+  height: 100%;
+  padding: 1rem;
+
+  background-image: linear-gradient(
+    rgba(102, 252, 236, 0.3) 0%,
+    rgba(102, 252, 236, 0.6) 100%
+  );
+
+  color: var(--light-turquoise);
+}
+
+code {
+  justify-content: left;
+  align-items: start;
+  flex-grow: 1;
+}
+/* End of Main */
+
+/* Footer CSS */
+footer {
+    text-align: center;
+    color: var(--turquoise);
+  }
+  /* End of Footer */
+
+/* Transition & selection */
+.code-header{
+    transition: all 1s ease;
+    color: var(--turquoise);
+  }
+.code-header:hover {
+    box-shadow: inset 0px 0px 6px var(--turquoise), 0px 0px 9px var(--turquoise);
+    color: var(--marigold-yellow);
+  }
+
+.code-card:hover {
+  box-shadow: inset 0px 0px 6px var(--turquoise), 0px 0px 9px var(--turquoise);
+}
+
+.code-block:hover {
+  box-shadow: 0px 0px 9px var(--light-turquoise);
+}
+
+.code-card pre:active{
+    user-select: all;
+}
+/* End of Transition & selection*/
+
+
+/* Media */
+@media only screen and (min-width: 768px) {
+  header {
+    max-width: 60%;
+  }
+
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header {
+    max-width: 40%;
+  }
+
+  .card-column {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 922px) {
+  header {
+    max-width: 70%;
+  }
+
+  .card-column {
+    flex: 0 0 33.3%;
+    max-width: 33.3%;
+  }
+}
+/* End of Media */
